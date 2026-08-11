@@ -89,6 +89,7 @@ export function FieldEditor({ field, scope, onSave, onCancel }: FieldEditorProps
   const [multiSelect, setMultiSelect] = useState(field?.multiSelect ?? false);
   const [multifieldIds, setMultifieldIds] = useState<string[]>(field?.fields ?? []);
   const [isArray, setIsArray] = useState(field?.isArray ?? true);
+  const isSystem = !!field?.systemDefined;
   const scopeDefaults = defaultFieldSettingsFor(scope);
   const [settings, setSettings] = useState<FieldSettings>({
     administration: {
@@ -106,8 +107,8 @@ export function FieldEditor({ field, scope, onSave, onCancel }: FieldEditorProps
     const errs: string[] = [];
     const trimmedId = id.trim();
     if (!trimmedId) errs.push('ID is required');
-    else if (!/^[A-Z_][A-Za-z0-9_]*$/.test(trimmedId))
-      errs.push('ID must start with uppercase letter or underscore, then letters/numbers/underscores only');
+    else if (!/^[A-Za-z_][A-Za-z0-9_]*$/.test(trimmedId))
+      errs.push('ID must start with a letter or underscore, then letters/numbers/underscores only');
     if (trimmedId !== field?.id && existingIds.includes(trimmedId)) errs.push('ID already exists');
     if (!nameSv.trim()) errs.push('Swedish name is required');
     if (!nameEn.trim()) errs.push('English name is required');
@@ -128,6 +129,7 @@ export function FieldEditor({ field, scope, onSave, onCancel }: FieldEditorProps
       type,
       multiLanguage,
       settings,
+      systemDefined: field?.systemDefined,
     };
 
     if (isOptionFieldType(type)) {
@@ -171,6 +173,12 @@ export function FieldEditor({ field, scope, onSave, onCancel }: FieldEditorProps
         </div>
       )}
 
+      {isSystem && (
+        <p className="text-xs text-muted-foreground rounded-md border border-border/60 bg-muted/20 px-3 py-2">
+          Litium system field — ID and type are locked. You can still adjust names and settings.
+        </p>
+      )}
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div>
           <Label>ID</Label>
@@ -179,6 +187,7 @@ export function FieldEditor({ field, scope, onSave, onCancel }: FieldEditorProps
             onChange={(e) => setId(e.target.value)}
             placeholder="e.g. HeroImage"
             className="font-mono text-sm"
+            disabled={isSystem}
           />
         </div>
         <div>
@@ -198,6 +207,7 @@ export function FieldEditor({ field, scope, onSave, onCancel }: FieldEditorProps
             value={type}
             onChange={(v) => setType(v as FieldType)}
             options={FIELD_TYPES.map((t) => ({ value: t, label: t }))}
+            className={isSystem ? 'opacity-70 pointer-events-none' : ''}
           />
         </div>
         <div className="flex items-end pb-1">

@@ -2,14 +2,33 @@ import { useRef } from 'react';
 import { useSchemaStore } from '@/store/schemaStore';
 import { validateSchema, type SchemaExport } from '@/types/schema';
 import { Button } from '@/components/ui/button';
-import { Download, Upload } from 'lucide-react';
+import { Download, Upload, RefreshCw } from 'lucide-react';
 import { toast } from 'sonner';
 
 export function ImportExport() {
   const exportJSON = useSchemaStore((s) => s.exportJSON);
   const importJSON = useSchemaStore((s) => s.importJSON);
   const validate = useSchemaStore((s) => s.validate);
+  const syncSystemBaseline = useSchemaStore((s) => s.syncSystemBaseline);
   const fileRef = useRef<HTMLInputElement>(null);
+
+  const handleSyncSystem = () => {
+    const result = syncSystemBaseline({ seedTemplatesIfEmpty: true });
+    const fieldsAdded =
+      result.productFieldsAdded + result.pageFieldsAdded + result.blockFieldsAdded;
+    const templatesAdded =
+      result.productTemplatesAdded + result.pageTemplatesAdded + result.blockTemplatesAdded;
+    if (fieldsAdded === 0 && templatesAdded === 0) {
+      toast.message('System baseline already in sync');
+      return;
+    }
+    toast.success('Synced Litium baseline', {
+      description: [
+        fieldsAdded > 0 ? `+${fieldsAdded} fields` : null,
+        templatesAdded > 0 ? `+${templatesAdded} templates` : null,
+      ].filter(Boolean).join(' · '),
+    });
+  };
 
   const handleExport = () => {
     const result = validate();
@@ -74,6 +93,9 @@ export function ImportExport() {
 
   return (
     <div className="flex items-center gap-2">
+      <Button variant="outline" size="sm" onClick={handleSyncSystem} title="Sync Litium system fields">
+        <RefreshCw className="w-3.5 h-3.5 mr-1.5" />Sync system
+      </Button>
       <Button variant="outline" size="sm" onClick={handleExport}>
         <Download className="w-3.5 h-3.5 mr-1.5" />Export
       </Button>

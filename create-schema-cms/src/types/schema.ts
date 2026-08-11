@@ -111,6 +111,8 @@ export interface FieldDefinition {
   /** Multifield: store as array of item sets (Litium IsArray) */
   isArray?: boolean;
   settings?: FieldSettings;
+  /** Litium platform system field (SystemFieldDefinitionConstants) */
+  systemDefined?: boolean;
 }
 
 export interface BlockTemplate {
@@ -128,9 +130,14 @@ export interface BlockContainer {
   allowedBlocks: string[];
 }
 
+export const WEBSITE_TEMPLATE_TYPES = ['Page', 'Website'] as const;
+export type WebsiteTemplateType = (typeof WEBSITE_TEMPLATE_TYPES)[number];
+
 export interface PageTemplate {
   id: string;
   name: LocalizedString;
+  /** Litium website area: Page or Website */
+  type: WebsiteTemplateType;
   fields: string[];
   blockContainers: BlockContainer[];
   fieldGroup?: FieldGroup;
@@ -266,7 +273,10 @@ export interface ValidationResult {
   errors: string[];
 }
 
-const PASCAL_RE = /^[A-Z_][A-Za-z0-9_]*$/;
+/** Field/template ids — Litium allows camelCase (e.g. footer) and PascalCase */
+const ENTITY_ID_RE = /^[A-Za-z_][A-Za-z0-9_]*$/;
+/** Field group ids may contain spaces (e.g. "Product information") */
+const GROUP_ID_RE = /^[A-Za-z_][A-Za-z0-9_ ]*$/;
 
 export function withFieldDefaults(
   f: FieldDefinition,
@@ -333,18 +343,29 @@ export function validateSchema(data: {
       ...blockTemplates.map((t) => t.id),
       ...pageTemplates.map((t) => t.id),
       ...productTemplates.map((t) => t.id),
-      ...pageTemplates.flatMap((pt) => pt.blockContainers.map((bc) => bc.id)),
     ],
-    'templates/containers',
+    'templates',
   );
+  for (const pt of pageTemplates) {
+    checkDuplicates(
+      pt.blockContainers.map((bc) => bc.id),
+      `page template "${pt.id}" containers`,
+    );
+  }
 
-  const checkPascal = (id: string, ctx: string) => {
+  const checkEntityId = (id: string, ctx: string) => {
     if (!id) errors.push(`${ctx}: ID is required`);
-    else if (!PASCAL_RE.test(id)) errors.push(`${ctx}: ID "${id}" must start with uppercase letter or underscore, then letters/numbers/underscores only`);
+    else if (!ENTITY_ID_RE.test(id))
+      errors.push(`${ctx}: ID "${id}" must start with a letter or underscore, then letters/numbers/underscores only`);
+  };
+  const checkGroupId = (id: string, ctx: string) => {
+    if (!id) errors.push(`${ctx}: ID is required`);
+    else if (!GROUP_ID_RE.test(id))
+      errors.push(`${ctx}: ID "${id}" must start with a letter or underscore (spaces allowed)`);
   };
 
   const checkField = (f: FieldDefinition, scope: 'block' | 'page' | 'product') => {
-    checkPascal(f.id, `${scope} field`);
+    checkEntityId(f.id, `${scope} field`);
     if (!f.name?.sv?.trim() || !f.name?.en?.trim())
       errors.push(`${scope} field "${f.id}": names (sv/en) are required`);
     if (!SCHEMA_META.litiumMapping.fieldTypeToYaml[f.type])
@@ -375,7 +396,7 @@ export function validateSchema(data: {
   productFields.forEach((f) => checkField(f, 'product'));
 
   for (const t of blockTemplates) {
-    checkPascal(t.id, 'block template');
+    checkEntityId(t.id, 'block template');
     if (!t.name?.sv?.trim() || !t.name?.en?.trim())
       errors.push(`block template "${t.id}": names (sv/en) are required`);
     for (const fid of t.fields) {
@@ -385,15 +406,18 @@ export function validateSchema(data: {
   }
 
   for (const t of pageTemplates) {
-    checkPascal(t.id, 'page template');
+    checkEntityId(t.id, 'page template');
     if (!t.name?.sv?.trim() || !t.name?.en?.trim())
       errors.push(`page template "${t.id}": names (sv/en) are required`);
+    const wt = t.type ?? 'Page';
+    if (!(WEBSITE_TEMPLATE_TYPES as readonly string[]).includes(wt))
+      errors.push(`page template "${t.id}": type must be Page or Website`);
     for (const fid of t.fields) {
       if (!pageFieldIds.has(fid))
         errors.push(`page template "${t.id}": references unknown page field "${fid}"`);
     }
     for (const bc of t.blockContainers) {
-      checkPascal(bc.id, `page template "${t.id}" container`);
+      checkEntityId(bc.id, `page template "${t.id}" container`);
       if (bc.combination && !(BLOCK_COMBINATIONS as readonly string[]).includes(bc.combination))
         errors.push(`page template "${t.id}" container "${bc.id}": invalid combination "${bc.combination}"`);
       for (const bid of bc.allowedBlocks) {
@@ -404,7 +428,7 @@ export function validateSchema(data: {
   }
 
   for (const t of productTemplates) {
-    checkPascal(t.id, 'product template');
+    checkEntityId(t.id, 'product template');
     if (!t.name?.sv?.trim() || !t.name?.en?.trim())
       errors.push(`product template "${t.id}": names (sv/en) are required`);
     const templateType = t.type ?? 'Product';
@@ -417,7 +441,7 @@ export function validateSchema(data: {
       if (!hasDefault)
         errors.push(`product template "${t.id}" ${kind}: must contain default group "${DEFAULT_PRODUCT_GROUP_ID}"`);
       for (const g of groups) {
-        checkPascal(g.id, `product template "${t.id}" ${kind} group`);
+        checkGroupId(g.id, `product template "${t.id}" ${kind} group`);
         if (groupSeen.has(g.id))
           errors.push(`product template "${t.id}" ${kind}: duplicate field group "${g.id}"`);
         groupSeen.add(g.id);
@@ -446,6 +470,7 @@ export function withDefaults<T extends BlockTemplate | PageTemplate>(t: T): T {
     const pt = t as PageTemplate;
     return {
       ...pt,
+      type: pt.type ?? 'Page',
       fieldGroup: pt.fieldGroup ?? DEFAULT_FIELD_GROUP,
       blockContainers: (pt.blockContainers ?? []).map(withContainerDefaults),
     } as T;

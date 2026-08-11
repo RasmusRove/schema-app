@@ -1,0 +1,3542 @@
+{
+  "source": "D:\\Projects\\Test React AI_260429\\litium-definitions",
+  "generatedAt": "2026-08-11T12:45:56.805Z",
+  "blockFields": [
+    {
+      "id": "_name",
+      "name": {
+        "sv": "Namn",
+        "en": "Name"
+      },
+      "type": "Text",
+      "multiLanguage": true,
+      "systemDefined": true,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": false,
+          "searchable": false
+        }
+      }
+    },
+    {
+      "id": "ActionText",
+      "name": {
+        "sv": "Call to action text",
+        "en": "Call to action text"
+      },
+      "type": "Text",
+      "multiLanguage": true,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "BannerLinkToCategory",
+      "name": {
+        "sv": "Länk till kategori",
+        "en": "Link to category"
+      },
+      "type": "Pointer",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false,
+      "entityType": "ProductsCategory",
+      "multiSelect": false
+    },
+    {
+      "id": "BannerLinkToPage",
+      "name": {
+        "sv": "Länk till sida",
+        "en": "Link to page"
+      },
+      "type": "Pointer",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false,
+      "entityType": "WebsitesPage",
+      "multiSelect": false
+    },
+    {
+      "id": "BannerLinkToProduct",
+      "name": {
+        "sv": "Länk till produkt",
+        "en": "Link to product"
+      },
+      "type": "Pointer",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false,
+      "entityType": "ProductsProduct",
+      "multiSelect": false
+    },
+    {
+      "id": "Banners",
+      "name": {
+        "sv": "Banners",
+        "en": "Banners"
+      },
+      "type": "Multifield",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false,
+      "fields": [
+        "LinkText",
+        "BlockImagePointer",
+        "BannerLinkToCategory",
+        "BannerLinkToPage",
+        "BannerLinkToProduct",
+        "ActionText"
+      ],
+      "isArray": true
+    },
+    {
+      "id": "BlockImagePointer",
+      "name": {
+        "sv": "Bild",
+        "en": "Image"
+      },
+      "type": "MediaPointerImage",
+      "multiLanguage": true,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "Category",
+      "name": {
+        "sv": "Kategori",
+        "en": "Category"
+      },
+      "type": "Pointer",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false,
+      "entityType": "ProductsCategory",
+      "multiSelect": false
+    },
+    {
+      "id": "CategoryLink",
+      "name": {
+        "sv": "Kategori",
+        "en": "Category"
+      },
+      "type": "Pointer",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false,
+      "entityType": "ProductsCategory",
+      "multiSelect": false
+    },
+    {
+      "id": "LinkText",
+      "name": {
+        "sv": "Länktext",
+        "en": "Link text"
+      },
+      "type": "Text",
+      "multiLanguage": true,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "NavigationLink",
+      "name": {
+        "sv": "Navigation link",
+        "en": "Navigation link"
+      },
+      "type": "Link",
+      "multiLanguage": true,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "NavigationLinks",
+      "name": {
+        "sv": "Navigation links",
+        "en": "Navigation links"
+      },
+      "type": "Multifield",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false,
+      "fields": [
+        "NavigationLink"
+      ],
+      "isArray": true
+    },
+    {
+      "id": "NavigationLinksHeader",
+      "name": {
+        "sv": "Rubrik",
+        "en": "Header"
+      },
+      "type": "Link",
+      "multiLanguage": true,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "NumberOfProducts",
+      "name": {
+        "sv": "Antal produkter",
+        "en": "Number of products"
+      },
+      "type": "Int",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "ProductList",
+      "name": {
+        "sv": "Produktlista",
+        "en": "Product list"
+      },
+      "type": "Pointer",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false,
+      "entityType": "ProductsProductList",
+      "multiSelect": false
+    },
+    {
+      "id": "Sorting",
+      "name": {
+        "sv": "Sortering",
+        "en": "Sorting"
+      },
+      "type": "TextOption",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false,
+      "options": [
+        {
+          "value": "manual",
+          "label": {
+            "sv": "Rekommenderade",
+            "en": "Recommended"
+          }
+        },
+        {
+          "value": "popular",
+          "label": {
+            "sv": "Populära",
+            "en": "Popular"
+          }
+        }
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": "Title",
+      "name": {
+        "sv": "Titel",
+        "en": "Title"
+      },
+      "type": "Text",
+      "multiLanguage": true,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false
+    }
+  ],
+  "pageFields": [
+    {
+      "id": "_name",
+      "name": {
+        "sv": "Namn",
+        "en": "Name"
+      },
+      "type": "Text",
+      "multiLanguage": true,
+      "systemDefined": true,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": false,
+          "searchable": false
+        }
+      }
+    },
+    {
+      "id": "_url",
+      "name": {
+        "sv": "URL",
+        "en": "URL"
+      },
+      "type": "Text",
+      "multiLanguage": true,
+      "systemDefined": true,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": false,
+          "searchable": false
+        }
+      }
+    },
+    {
+      "id": "_icon",
+      "name": {
+        "sv": "Ikon",
+        "en": "Icon"
+      },
+      "type": "MediaPointerImage",
+      "multiLanguage": false,
+      "systemDefined": true,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": false,
+          "searchable": false
+        }
+      }
+    },
+    {
+      "id": "_seoTitle",
+      "name": {
+        "sv": "SEO-titel",
+        "en": "SEO title"
+      },
+      "type": "Text",
+      "multiLanguage": true,
+      "systemDefined": true,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": false,
+          "searchable": false
+        }
+      }
+    },
+    {
+      "id": "_seoDescription",
+      "name": {
+        "sv": "SEO-beskrivning",
+        "en": "SEO description"
+      },
+      "type": "MultirowText",
+      "multiLanguage": true,
+      "systemDefined": true,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": false,
+          "searchable": false
+        }
+      }
+    },
+    {
+      "id": "_indexThePage",
+      "name": {
+        "sv": "Indexera sidan",
+        "en": "Index the page"
+      },
+      "type": "Boolean",
+      "multiLanguage": false,
+      "systemDefined": true,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": false,
+          "searchable": false
+        }
+      }
+    },
+    {
+      "id": "CheckoutPage",
+      "name": {
+        "sv": "Kassa",
+        "en": "Checkout page"
+      },
+      "type": "Pointer",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false,
+      "entityType": "WebsitesPage",
+      "multiSelect": false
+    },
+    {
+      "id": "Editor",
+      "name": {
+        "sv": "Text",
+        "en": "Text"
+      },
+      "type": "Editor",
+      "multiLanguage": true,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "ForbiddenPage",
+      "name": {
+        "sv": "Åtkomst nekad (403)",
+        "en": "Forbidden page (403)"
+      },
+      "type": "Pointer",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false,
+      "entityType": "WebsitesPage",
+      "multiSelect": false
+    },
+    {
+      "id": "GeneralError",
+      "name": {
+        "sv": "Generellt fel (500)",
+        "en": "General error (500)"
+      },
+      "type": "Pointer",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false,
+      "entityType": "WebsitesPage",
+      "multiSelect": false
+    },
+    {
+      "id": "Introduction",
+      "name": {
+        "sv": "Introduktion",
+        "en": "Introduction"
+      },
+      "type": "MultirowText",
+      "multiLanguage": true,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "LoginPage",
+      "name": {
+        "sv": "Inloggningssida",
+        "en": "Login page"
+      },
+      "type": "Pointer",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false,
+      "entityType": "WebsitesPage",
+      "multiSelect": false
+    },
+    {
+      "id": "LogotypeMain",
+      "name": {
+        "sv": "Logotyp (huvudbild)",
+        "en": "Logotype (main)"
+      },
+      "type": "MediaPointerImage",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "MyPagesPage",
+      "name": {
+        "sv": "Mina sidor",
+        "en": "My pages page"
+      },
+      "type": "Pointer",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false,
+      "entityType": "WebsitesPage",
+      "multiSelect": false
+    },
+    {
+      "id": "NewPassword",
+      "name": {
+        "sv": "Nytt lösenord",
+        "en": "New Password"
+      },
+      "type": "Editor",
+      "multiLanguage": true,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "OrderConfirmationPage",
+      "name": {
+        "sv": "Orderbekräftelsesida",
+        "en": "Order confirmation page"
+      },
+      "type": "Pointer",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false,
+      "entityType": "WebsitesPage",
+      "multiSelect": false
+    },
+    {
+      "id": "OrderHistoryPage",
+      "name": {
+        "sv": "Orderhistorik",
+        "en": "Order history"
+      },
+      "type": "Pointer",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false,
+      "entityType": "WebsitesPage",
+      "multiSelect": false
+    },
+    {
+      "id": "OrderPage",
+      "name": {
+        "sv": "Ordersida",
+        "en": "Order page"
+      },
+      "type": "Pointer",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false,
+      "entityType": "WebsitesPage",
+      "multiSelect": false
+    },
+    {
+      "id": "PageNotFound",
+      "name": {
+        "sv": "Sidan kunde inte hittas (404)",
+        "en": "Page not found (404)"
+      },
+      "type": "Pointer",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false,
+      "entityType": "WebsitesPage",
+      "multiSelect": false
+    },
+    {
+      "id": "ProductFilterFields",
+      "name": {
+        "sv": "Produktfilter",
+        "en": "Product filters"
+      },
+      "type": "Pointer",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false,
+      "entityType": "ProductsProductField",
+      "multiSelect": true
+    },
+    {
+      "id": "ProductList",
+      "name": {
+        "sv": "Produktlista",
+        "en": "Product list"
+      },
+      "type": "Pointer",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false,
+      "entityType": "ProductsProductList",
+      "multiSelect": false
+    },
+    {
+      "id": "SearchResultPage",
+      "name": {
+        "sv": "Sökresultat",
+        "en": "Search result page"
+      },
+      "type": "Pointer",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false,
+      "entityType": "WebsitesPage",
+      "multiSelect": false
+    },
+    {
+      "id": "ShowNavigation",
+      "name": {
+        "sv": "Visa navigering",
+        "en": "Show navigation"
+      },
+      "type": "Boolean",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "TermsAndConditionsLinkPage",
+      "name": {
+        "sv": "Köpvillkor",
+        "en": "Terms & Conditions"
+      },
+      "type": "Pointer",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false,
+      "entityType": "WebsitesPage",
+      "multiSelect": false
+    },
+    {
+      "id": "Title",
+      "name": {
+        "sv": "Titel",
+        "en": "Title"
+      },
+      "type": "Text",
+      "multiLanguage": true,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": false,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false
+    }
+  ],
+  "productFields": [
+    {
+      "id": "_name",
+      "name": {
+        "sv": "Namn",
+        "en": "Name"
+      },
+      "type": "Text",
+      "multiLanguage": true,
+      "systemDefined": true,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": false,
+          "searchable": false
+        }
+      }
+    },
+    {
+      "id": "_description",
+      "name": {
+        "sv": "Beskrivning",
+        "en": "Description"
+      },
+      "type": "MultirowText",
+      "multiLanguage": true,
+      "systemDefined": true,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": false,
+          "searchable": false
+        }
+      }
+    },
+    {
+      "id": "_url",
+      "name": {
+        "sv": "URL",
+        "en": "URL"
+      },
+      "type": "Text",
+      "multiLanguage": true,
+      "systemDefined": true,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": false,
+          "searchable": false
+        }
+      }
+    },
+    {
+      "id": "_seoTitle",
+      "name": {
+        "sv": "SEO-titel",
+        "en": "SEO title"
+      },
+      "type": "Text",
+      "multiLanguage": true,
+      "systemDefined": true,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": false,
+          "searchable": false
+        }
+      }
+    },
+    {
+      "id": "_seoDescription",
+      "name": {
+        "sv": "SEO-beskrivning",
+        "en": "SEO description"
+      },
+      "type": "MultirowText",
+      "multiLanguage": true,
+      "systemDefined": true,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": false,
+          "searchable": false
+        }
+      }
+    },
+    {
+      "id": "AssemblingInstruction",
+      "name": {
+        "sv": "Monteringsanvisning",
+        "en": "Assembling instruction"
+      },
+      "type": "MediaPointerFile",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "BodyMaterial",
+      "name": {
+        "sv": "Material stomme",
+        "en": "Body material"
+      },
+      "type": "TextOption",
+      "multiLanguage": true,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false,
+      "options": [
+        {
+          "value": "MoistResistantMDF",
+          "label": {
+            "sv": "Fukttrög MDF",
+            "en": "Moist resistant MDF"
+          }
+        },
+        {
+          "value": "MoistureResistantChipboard",
+          "label": {
+            "sv": "Fukttrög spånskiva",
+            "en": "Moisture resistant chipboard"
+          }
+        }
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": "Brand",
+      "name": {
+        "sv": "Märke",
+        "en": "Brand"
+      },
+      "type": "TextOption",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false,
+      "options": [
+        {
+          "value": "Adrian Hammond",
+          "label": {
+            "sv": "Adrian Hammond",
+            "en": "Adrian Hammond"
+          }
+        },
+        {
+          "value": "Dolce & Gabbana",
+          "label": {
+            "sv": "Dolce & Gabbana",
+            "en": "Dolce & Gabbana"
+          }
+        },
+        {
+          "value": "Le specs",
+          "label": {
+            "sv": "Le specs",
+            "en": "Le specs"
+          }
+        },
+        {
+          "value": "MaQ",
+          "label": {
+            "sv": "MaQ",
+            "en": "MaQ"
+          }
+        },
+        {
+          "value": "Nolita",
+          "label": {
+            "sv": "Nolita",
+            "en": "Nolita"
+          }
+        },
+        {
+          "value": "Odd Molly",
+          "label": {
+            "sv": "Odd Molly",
+            "en": "Odd Molly"
+          }
+        },
+        {
+          "value": "Saint Tropez",
+          "label": {
+            "sv": "Saint Tropez",
+            "en": "Saint Tropez"
+          }
+        },
+        {
+          "value": "Vila",
+          "label": {
+            "sv": "Vila",
+            "en": "Vila"
+          }
+        },
+        {
+          "value": "HÅG",
+          "label": {
+            "sv": "HÅG",
+            "en": "HÅG"
+          }
+        },
+        {
+          "value": "RBM",
+          "label": {
+            "sv": "RBM",
+            "en": "RBM"
+          }
+        },
+        {
+          "value": "RH",
+          "label": {
+            "sv": "RH",
+            "en": "RH"
+          }
+        },
+        {
+          "value": "Casall",
+          "label": {
+            "sv": "Casall",
+            "en": "Casall"
+          }
+        },
+        {
+          "value": "Court Casall",
+          "label": {
+            "sv": "Court Casall",
+            "en": "Court Casall"
+          }
+        },
+        {
+          "value": "Iconic Casall",
+          "label": {
+            "sv": "Iconic Casall",
+            "en": "Iconic Casall"
+          }
+        },
+        {
+          "value": "Essential Casall",
+          "label": {
+            "sv": "Essential Casall",
+            "en": "Essential Casall"
+          }
+        }
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": "CareAdvice",
+      "name": {
+        "sv": "Skötselråd",
+        "en": "Care advice"
+      },
+      "type": "Text",
+      "multiLanguage": true,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "Color",
+      "name": {
+        "sv": "Färg",
+        "en": "Color"
+      },
+      "type": "TextOption",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false,
+      "options": [
+        {
+          "value": "White",
+          "label": {
+            "sv": "Vit",
+            "en": "White"
+          }
+        },
+        {
+          "value": "Beige",
+          "label": {
+            "sv": "Beige",
+            "en": "Beige"
+          }
+        },
+        {
+          "value": "Black",
+          "label": {
+            "sv": "Svart",
+            "en": "Black"
+          }
+        },
+        {
+          "value": "Grey",
+          "label": {
+            "sv": "Grå",
+            "en": "Grey"
+          }
+        },
+        {
+          "value": "Rose",
+          "label": {
+            "sv": "Rosa",
+            "en": "Rose"
+          }
+        },
+        {
+          "value": "Brown",
+          "label": {
+            "sv": "Brun",
+            "en": "Brown"
+          }
+        },
+        {
+          "value": "Red",
+          "label": {
+            "sv": "Röd",
+            "en": "Red"
+          }
+        },
+        {
+          "value": "Blue",
+          "label": {
+            "sv": "Blå",
+            "en": "Blue"
+          }
+        },
+        {
+          "value": "Green",
+          "label": {
+            "sv": "Grön",
+            "en": "Green"
+          }
+        },
+        {
+          "value": "Pink",
+          "label": {
+            "sv": "Rosa",
+            "en": "Pink"
+          }
+        },
+        {
+          "value": "Chrome",
+          "label": {
+            "sv": "Krom",
+            "en": "Chrome"
+          }
+        },
+        {
+          "value": "Brass",
+          "label": {
+            "sv": "Mässing",
+            "en": "Brass"
+          }
+        },
+        {
+          "value": "Copper",
+          "label": {
+            "sv": "Koppar",
+            "en": "Copper"
+          }
+        }
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": "Depth",
+      "name": {
+        "sv": "Djup",
+        "en": "Depth"
+      },
+      "type": "Decimal",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "EAN",
+      "name": {
+        "sv": "EAN",
+        "en": "EAN"
+      },
+      "type": "Text",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "ETIM",
+      "name": {
+        "sv": "ETIM",
+        "en": "ETIM"
+      },
+      "type": "Text",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "FrontMaterial",
+      "name": {
+        "sv": "Material front",
+        "en": "Front material"
+      },
+      "type": "TextOption",
+      "multiLanguage": true,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false,
+      "options": [
+        {
+          "value": "MoistResistantMDF",
+          "label": {
+            "sv": "Fukttrög MDF",
+            "en": "Moist resistant MDF"
+          }
+        }
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": "Height",
+      "name": {
+        "sv": "Höjd",
+        "en": "Height"
+      },
+      "type": "Decimal",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "HoleSpacingHandle",
+      "name": {
+        "sv": "CC handtag (mm)",
+        "en": "Hole spacing, handle (mm)"
+      },
+      "type": "DecimalOption",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false,
+      "options": [
+        {
+          "value": 128,
+          "label": {
+            "sv": "128",
+            "en": "128"
+          }
+        },
+        {
+          "value": 20,
+          "label": {
+            "sv": "20",
+            "en": "20"
+          }
+        },
+        {
+          "value": 133,
+          "label": {
+            "sv": "133",
+            "en": "133"
+          }
+        },
+        {
+          "value": 97,
+          "label": {
+            "sv": "97",
+            "en": "97"
+          }
+        },
+        {
+          "value": 200,
+          "label": {
+            "sv": "200",
+            "en": "200"
+          }
+        },
+        {
+          "value": 233,
+          "label": {
+            "sv": "233",
+            "en": "233"
+          }
+        },
+        {
+          "value": 177,
+          "label": {
+            "sv": "177",
+            "en": "177"
+          }
+        }
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": "MainMaterial",
+      "name": {
+        "sv": "Huvudsakligt material",
+        "en": "Main material"
+      },
+      "type": "TextOption",
+      "multiLanguage": true,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false,
+      "options": [
+        {
+          "value": "Steel",
+          "label": {
+            "sv": "Stål",
+            "en": "Steel"
+          }
+        },
+        {
+          "value": "Brass",
+          "label": {
+            "sv": "Mässing",
+            "en": "Brass"
+          }
+        }
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": "Measurement",
+      "name": {
+        "sv": "Måttskiss",
+        "en": "Measurement"
+      },
+      "type": "MediaPointerFile",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "NOBB",
+      "name": {
+        "sv": "NOBB",
+        "en": "NOBB"
+      },
+      "type": "Text",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "OpeningFunction",
+      "name": {
+        "sv": "Typ av Öppningsmekanism",
+        "en": "Opening function"
+      },
+      "type": "TextOption",
+      "multiLanguage": true,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false,
+      "options": [
+        {
+          "value": "SmoothOpen",
+          "label": {
+            "sv": "SmoothOpen",
+            "en": "SmoothOpen"
+          }
+        },
+        {
+          "value": "SoftClose",
+          "label": {
+            "sv": "Mjukstängande",
+            "en": "Soft close"
+          }
+        }
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": "PackageDepth",
+      "name": {
+        "sv": "Förp. djup",
+        "en": "Package depth"
+      },
+      "type": "Decimal",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "PackageHeight",
+      "name": {
+        "sv": "Förp. höjd",
+        "en": "Package height"
+      },
+      "type": "Decimal",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "PackageWeight",
+      "name": {
+        "sv": "Förp. vikt",
+        "en": "Package weight"
+      },
+      "type": "Decimal",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "PackageWidth",
+      "name": {
+        "sv": "Förp. bredd",
+        "en": "Package width"
+      },
+      "type": "Decimal",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "ProductLine",
+      "name": {
+        "sv": "Produktlinje",
+        "en": "Product line"
+      },
+      "type": "TextOption",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false,
+      "options": [
+        {
+          "value": "Go",
+          "label": {
+            "sv": "Go",
+            "en": "Go"
+          }
+        },
+        {
+          "value": "Edge",
+          "label": {
+            "sv": "Edge",
+            "en": "Edge"
+          }
+        },
+        {
+          "value": "Fine",
+          "label": {
+            "sv": "Fine",
+            "en": "Fine"
+          }
+        },
+        {
+          "value": "Verge",
+          "label": {
+            "sv": "Verge",
+            "en": "Verge"
+          }
+        },
+        {
+          "value": "Bow",
+          "label": {
+            "sv": "Bow",
+            "en": "Bow"
+          }
+        },
+        {
+          "value": "Stand",
+          "label": {
+            "sv": "Stand",
+            "en": "Stand"
+          }
+        },
+        {
+          "value": "Sober",
+          "label": {
+            "sv": "Sober",
+            "en": "Sober"
+          }
+        },
+        {
+          "value": "Shape",
+          "label": {
+            "sv": "Shape",
+            "en": "Shape"
+          }
+        }
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": "ProductSheet",
+      "name": {
+        "sv": "Produktblad",
+        "en": "Product sheet"
+      },
+      "type": "MediaPointerFile",
+      "multiLanguage": true,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "RSK",
+      "name": {
+        "sv": "RSK",
+        "en": "RSK"
+      },
+      "type": "Text",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "SakerVatten",
+      "name": {
+        "sv": "Säker vatten",
+        "en": "Säker vatten"
+      },
+      "type": "Boolean",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "Size",
+      "name": {
+        "sv": "Storlek",
+        "en": "Size"
+      },
+      "type": "TextOption",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false,
+      "options": [
+        {
+          "value": "S",
+          "label": {
+            "sv": "S",
+            "en": "S"
+          }
+        },
+        {
+          "value": "One Size",
+          "label": {
+            "sv": "One Size",
+            "en": "One Size"
+          }
+        },
+        {
+          "value": "M",
+          "label": {
+            "sv": "M",
+            "en": "M"
+          }
+        },
+        {
+          "value": "L",
+          "label": {
+            "sv": "L",
+            "en": "L"
+          }
+        },
+        {
+          "value": "One size",
+          "label": {
+            "sv": "One size",
+            "en": "One size"
+          }
+        }
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": "SpareParts",
+      "name": {
+        "sv": "Reservdelar",
+        "en": "Spare parts"
+      },
+      "type": "MediaPointerFile",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "Specification",
+      "name": {
+        "sv": "Produktegenskaper",
+        "en": "Product specifications"
+      },
+      "type": "MultirowText",
+      "multiLanguage": true,
+      "settings": {
+        "administration": {
+          "columns": false,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": true
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "StockedArticle",
+      "name": {
+        "sv": "Lagerförd artikel",
+        "en": "Stocked article"
+      },
+      "type": "Boolean",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "SurfaceFinish",
+      "name": {
+        "sv": "Ytbehandling",
+        "en": "Surface finish"
+      },
+      "type": "TextOption",
+      "multiLanguage": true,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false,
+      "options": [
+        {
+          "value": "Matt",
+          "label": {
+            "sv": "Matt",
+            "en": "Matt"
+          }
+        },
+        {
+          "value": "Glossy",
+          "label": {
+            "sv": "Blank",
+            "en": "Glossy"
+          }
+        }
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": "SurfaceTreatment",
+      "name": {
+        "sv": "Ytbehandling",
+        "en": "Surface treatment"
+      },
+      "type": "TextOption",
+      "multiLanguage": true,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false,
+      "options": [
+        {
+          "value": "Lacquered",
+          "label": {
+            "sv": "Lackerad",
+            "en": "Lacquered"
+          }
+        },
+        {
+          "value": "NickelPLated",
+          "label": {
+            "sv": "Förnicklad",
+            "en": "Nickel plated"
+          }
+        },
+        {
+          "value": "Polished",
+          "label": {
+            "sv": "Polerad",
+            "en": "Polished"
+          }
+        }
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": "SuspensionType",
+      "name": {
+        "sv": "Typ av upphängning",
+        "en": "Suspension type"
+      },
+      "type": "TextOption",
+      "multiLanguage": true,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false,
+      "options": [
+        {
+          "value": "AdjustableSuspensionFittings",
+          "label": {
+            "sv": "Justerbara upphängningsbeslag med väggskena",
+            "en": "Adjustable suspension fittings with wall"
+          }
+        }
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": "Type",
+      "name": {
+        "sv": "Typ",
+        "en": "Type"
+      },
+      "type": "TextOption",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": false,
+          "searchable": true
+        }
+      },
+      "systemDefined": false,
+      "options": [
+        {
+          "value": "Outdoor",
+          "label": {
+            "sv": "Outdoor",
+            "en": "Outdoor"
+          }
+        },
+        {
+          "value": "Yoga",
+          "label": {
+            "sv": "Yoga",
+            "en": "Yoga"
+          }
+        },
+        {
+          "value": "Padel",
+          "label": {
+            "sv": "Padel",
+            "en": "Padel"
+          }
+        },
+        {
+          "value": "Running",
+          "label": {
+            "sv": "Löpning",
+            "en": "Running"
+          }
+        },
+        {
+          "value": "Loungewear",
+          "label": {
+            "sv": "Loungewear",
+            "en": "Loungewear"
+          }
+        },
+        {
+          "value": "Gym",
+          "label": {
+            "sv": "Gym",
+            "en": "Gym"
+          }
+        }
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": "Weight",
+      "name": {
+        "sv": "Vikt",
+        "en": "Weight"
+      },
+      "type": "Decimal",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false
+    },
+    {
+      "id": "Width",
+      "name": {
+        "sv": "Bredd",
+        "en": "Width"
+      },
+      "type": "Decimal",
+      "multiLanguage": false,
+      "settings": {
+        "administration": {
+          "columns": true,
+          "filter": true,
+          "readonly": false
+        },
+        "storefront": {
+          "visible": true,
+          "searchable": false
+        }
+      },
+      "systemDefined": false
+    }
+  ],
+  "blockTemplates": [
+    {
+      "id": "Banner",
+      "name": {
+        "sv": "Banner",
+        "en": "Banner"
+      },
+      "fields": [
+        "_name",
+        "Banners"
+      ],
+      "fieldGroups": [
+        {
+          "id": "General",
+          "name": {
+            "sv": "Allmänt",
+            "en": "General"
+          },
+          "fields": [
+            "_name"
+          ]
+        },
+        {
+          "id": "Banners",
+          "name": {
+            "sv": "Banners",
+            "en": "Banners"
+          },
+          "fields": [
+            "Banners"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "FooterColumn",
+      "name": {
+        "sv": "Footer column",
+        "en": "Footer column"
+      },
+      "fields": [
+        "_name"
+      ],
+      "fieldGroups": [
+        {
+          "id": "General",
+          "name": {
+            "sv": "Allmänt",
+            "en": "General"
+          },
+          "fields": [
+            "_name"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NavigationLinks",
+      "name": {
+        "sv": "Links",
+        "en": "Links"
+      },
+      "fields": [
+        "_name",
+        "NavigationLinksHeader",
+        "NavigationLinks"
+      ],
+      "fieldGroups": [
+        {
+          "id": "General",
+          "name": {
+            "sv": "Allmänt",
+            "en": "General"
+          },
+          "fields": [
+            "_name",
+            "NavigationLinksHeader",
+            "NavigationLinks"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PrimaryNavigationBanner",
+      "name": {
+        "sv": "Menu banner",
+        "en": "Menu banner"
+      },
+      "fields": [
+        "_name",
+        "BlockImagePointer",
+        "NavigationLink"
+      ],
+      "fieldGroups": [
+        {
+          "id": "General",
+          "name": {
+            "sv": "Allmänt",
+            "en": "General"
+          },
+          "fields": [
+            "_name",
+            "BlockImagePointer",
+            "NavigationLink"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PrimaryNavigationCategories",
+      "name": {
+        "sv": "Categories",
+        "en": "Categories"
+      },
+      "fields": [
+        "_name",
+        "CategoryLink"
+      ],
+      "fieldGroups": [
+        {
+          "id": "General",
+          "name": {
+            "sv": "Allmänt",
+            "en": "General"
+          },
+          "fields": [
+            "_name",
+            "CategoryLink"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PrimaryNavigationColumn",
+      "name": {
+        "sv": "Primary navigation column",
+        "en": "Primary navigation column"
+      },
+      "fields": [
+        "_name"
+      ],
+      "fieldGroups": [
+        {
+          "id": "General",
+          "name": {
+            "sv": "Allmänt",
+            "en": "General"
+          },
+          "fields": [
+            "_name"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PrimaryNavigationLink",
+      "name": {
+        "sv": "Primary navigation link",
+        "en": "Primary navigation link"
+      },
+      "fields": [
+        "_name",
+        "NavigationLink"
+      ],
+      "fieldGroups": [
+        {
+          "id": "General",
+          "name": {
+            "sv": "Allmänt",
+            "en": "General"
+          },
+          "fields": [
+            "_name",
+            "NavigationLink"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Products",
+      "name": {
+        "sv": "Produkter",
+        "en": "Products"
+      },
+      "fields": [
+        "_name",
+        "Title",
+        "Category",
+        "ProductList",
+        "NumberOfProducts",
+        "Sorting"
+      ],
+      "fieldGroups": [
+        {
+          "id": "Settings",
+          "name": {
+            "sv": "Inställningar",
+            "en": "Settings"
+          },
+          "fields": [
+            "_name",
+            "Title",
+            "Category",
+            "ProductList",
+            "NumberOfProducts",
+            "Sorting"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SecondaryNavigationLink",
+      "name": {
+        "sv": "Länk sekundärnavigering",
+        "en": "Secondary Navigation Link"
+      },
+      "fields": [
+        "_name",
+        "NavigationLink"
+      ],
+      "fieldGroups": [
+        {
+          "id": "General",
+          "name": {
+            "sv": "Allmänt",
+            "en": "General"
+          },
+          "fields": [
+            "_name"
+          ]
+        },
+        {
+          "id": "Link",
+          "name": {
+            "sv": "Länk",
+            "en": "Link"
+          },
+          "fields": [
+            "NavigationLink"
+          ]
+        }
+      ]
+    }
+  ],
+  "pageTemplates": [
+    {
+      "id": "AcceleratorWebsite",
+      "name": {
+        "sv": "Webbplats",
+        "en": "Website"
+      },
+      "type": "Website",
+      "fields": [
+        "_name",
+        "LogotypeMain",
+        "_icon",
+        "CheckoutPage",
+        "LoginPage",
+        "MyPagesPage",
+        "SearchResultPage",
+        "ProductFilterFields",
+        "OrderConfirmationPage",
+        "OrderPage",
+        "OrderHistoryPage",
+        "TermsAndConditionsLinkPage",
+        "PageNotFound",
+        "ForbiddenPage",
+        "GeneralError"
+      ],
+      "fieldGroups": [
+        {
+          "id": "General",
+          "name": {
+            "sv": "Allmänt",
+            "en": "General"
+          },
+          "fields": [
+            "_name"
+          ]
+        },
+        {
+          "id": "Logotype",
+          "name": {
+            "sv": "Logotyp",
+            "en": "Logotype"
+          },
+          "fields": [
+            "LogotypeMain",
+            "_icon"
+          ]
+        },
+        {
+          "id": "Header",
+          "name": {
+            "sv": "Sidhuvud",
+            "en": "Header"
+          },
+          "fields": [
+            "CheckoutPage",
+            "LoginPage",
+            "MyPagesPage"
+          ]
+        },
+        {
+          "id": "Search",
+          "name": {
+            "sv": "Sök",
+            "en": "Search"
+          },
+          "fields": [
+            "SearchResultPage"
+          ]
+        },
+        {
+          "id": "Filters",
+          "name": {
+            "sv": "Filter",
+            "en": "Filters"
+          },
+          "fields": [
+            "ProductFilterFields"
+          ]
+        },
+        {
+          "id": "OrderConfirmationPage",
+          "name": {
+            "sv": "Ordrar",
+            "en": "Orders"
+          },
+          "fields": [
+            "OrderConfirmationPage",
+            "OrderPage",
+            "OrderHistoryPage",
+            "TermsAndConditionsLinkPage"
+          ]
+        },
+        {
+          "id": "Errors",
+          "name": {
+            "sv": "Felsidor",
+            "en": "Errors"
+          },
+          "fields": [
+            "PageNotFound",
+            "ForbiddenPage",
+            "GeneralError"
+          ]
+        }
+      ],
+      "blockContainers": [
+        {
+          "id": "footer",
+          "name": {
+            "sv": "footer",
+            "en": "footer"
+          },
+          "combination": "IncludeSelected",
+          "allowedBlocks": [
+            "FooterColumn"
+          ]
+        },
+        {
+          "id": "primaryNavigation",
+          "name": {
+            "sv": "primaryNavigation",
+            "en": "primaryNavigation"
+          },
+          "combination": "IncludeSelected",
+          "allowedBlocks": [
+            "PrimaryNavigationLink",
+            "SecondaryNavigationLink"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Article",
+      "name": {
+        "sv": "Artikel",
+        "en": "Article"
+      },
+      "type": "Page",
+      "fields": [
+        "_name",
+        "_url",
+        "ShowNavigation",
+        "Title",
+        "Introduction",
+        "Editor"
+      ],
+      "fieldGroups": [
+        {
+          "id": "Settings",
+          "name": {
+            "sv": "Inställningar",
+            "en": "Settings"
+          },
+          "fields": [
+            "_name",
+            "_url",
+            "ShowNavigation"
+          ]
+        },
+        {
+          "id": "Content",
+          "name": {
+            "sv": "Innehåll",
+            "en": "Content"
+          },
+          "fields": [
+            "Title",
+            "Introduction",
+            "Editor"
+          ]
+        }
+      ],
+      "blockContainers": [
+        {
+          "id": "Top",
+          "name": {
+            "sv": "Topp",
+            "en": "Top"
+          },
+          "combination": "IncludeSelected",
+          "allowedBlocks": [
+            "Banner",
+            "Products"
+          ]
+        },
+        {
+          "id": "Content",
+          "name": {
+            "sv": "Innehåll",
+            "en": "Content"
+          },
+          "combination": "IncludeSelected",
+          "allowedBlocks": [
+            "Banner",
+            "Products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Checkout",
+      "name": {
+        "sv": "Kassa",
+        "en": "Checkout"
+      },
+      "type": "Page",
+      "fields": [
+        "_name",
+        "_url"
+      ],
+      "fieldGroups": [
+        {
+          "id": "General",
+          "name": {
+            "sv": "Allmänt",
+            "en": "General"
+          },
+          "fields": [
+            "_name",
+            "_url"
+          ]
+        }
+      ],
+      "blockContainers": []
+    },
+    {
+      "id": "Error",
+      "name": {
+        "sv": "Felsida",
+        "en": "Error page"
+      },
+      "type": "Page",
+      "fields": [
+        "_name",
+        "_url",
+        "Title",
+        "Editor"
+      ],
+      "fieldGroups": [
+        {
+          "id": "Settings",
+          "name": {
+            "sv": "Inställningar",
+            "en": "Settings"
+          },
+          "fields": [
+            "_name",
+            "_url"
+          ]
+        },
+        {
+          "id": "Content",
+          "name": {
+            "sv": "Innehåll",
+            "en": "Content"
+          },
+          "fields": [
+            "Title",
+            "Editor"
+          ]
+        }
+      ],
+      "blockContainers": [
+        {
+          "id": "BlockContainer",
+          "name": {
+            "sv": "BlockContainer",
+            "en": "BlockContainer"
+          },
+          "combination": "IncludeSelected",
+          "allowedBlocks": [
+            "Banner"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Landing",
+      "name": {
+        "sv": "Landningssida",
+        "en": "Landing page"
+      },
+      "type": "Page",
+      "fields": [
+        "_name",
+        "_url"
+      ],
+      "fieldGroups": [
+        {
+          "id": "Settings",
+          "name": {
+            "sv": "Inställningar",
+            "en": "Settings"
+          },
+          "fields": [
+            "_name",
+            "_url"
+          ]
+        }
+      ],
+      "blockContainers": [
+        {
+          "id": "Main",
+          "name": {
+            "sv": "Main",
+            "en": "Main"
+          },
+          "combination": "IncludeSelected",
+          "allowedBlocks": [
+            "Banner",
+            "Products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Login",
+      "name": {
+        "sv": "Inloggning",
+        "en": "Login"
+      },
+      "type": "Page",
+      "fields": [
+        "_name",
+        "_url",
+        "NewPassword"
+      ],
+      "fieldGroups": [
+        {
+          "id": "General",
+          "name": {
+            "sv": "Allmänt",
+            "en": "General"
+          },
+          "fields": [
+            "_name",
+            "_url",
+            "NewPassword"
+          ]
+        }
+      ],
+      "blockContainers": []
+    },
+    {
+      "id": "MyAccountAddresses",
+      "name": {
+        "sv": "Mitt konto - adresser",
+        "en": "My account - addresses"
+      },
+      "type": "Page",
+      "fields": [
+        "_name",
+        "_url"
+      ],
+      "fieldGroups": [
+        {
+          "id": "Settings",
+          "name": {
+            "sv": "Inställningar",
+            "en": "Settings"
+          },
+          "fields": [
+            "_name",
+            "_url"
+          ]
+        }
+      ],
+      "blockContainers": [
+        {
+          "id": "Main",
+          "name": {
+            "sv": "Main",
+            "en": "Main"
+          },
+          "combination": "IncludeSelected",
+          "allowedBlocks": [
+            "Banner"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MyAccountDashboard",
+      "name": {
+        "sv": "Mitt konto",
+        "en": "My account"
+      },
+      "type": "Page",
+      "fields": [
+        "_name",
+        "_url"
+      ],
+      "fieldGroups": [
+        {
+          "id": "Settings",
+          "name": {
+            "sv": "Inställningar",
+            "en": "Settings"
+          },
+          "fields": [
+            "_name",
+            "_url"
+          ]
+        }
+      ],
+      "blockContainers": [
+        {
+          "id": "Top",
+          "name": {
+            "sv": "Topp",
+            "en": "Top"
+          },
+          "combination": "IncludeSelected",
+          "allowedBlocks": [
+            "Banner"
+          ]
+        },
+        {
+          "id": "Content",
+          "name": {
+            "sv": "Innehåll",
+            "en": "Content"
+          },
+          "combination": "IncludeSelected",
+          "allowedBlocks": [
+            "Banner"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MyAccountLoginDetails",
+      "name": {
+        "sv": "Mitt konto - inloggning",
+        "en": "My account - login details"
+      },
+      "type": "Page",
+      "fields": [
+        "_name",
+        "_url"
+      ],
+      "fieldGroups": [
+        {
+          "id": "Settings",
+          "name": {
+            "sv": "Inställningar",
+            "en": "Settings"
+          },
+          "fields": [
+            "_name",
+            "_url"
+          ]
+        }
+      ],
+      "blockContainers": [
+        {
+          "id": "Main",
+          "name": {
+            "sv": "Main",
+            "en": "Main"
+          },
+          "combination": "IncludeSelected",
+          "allowedBlocks": [
+            "Banner"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MyAccountMyProfile",
+      "name": {
+        "sv": "Mitt konto - min profil",
+        "en": "My account - my profile"
+      },
+      "type": "Page",
+      "fields": [
+        "_name",
+        "_url"
+      ],
+      "fieldGroups": [
+        {
+          "id": "Settings",
+          "name": {
+            "sv": "Inställningar",
+            "en": "Settings"
+          },
+          "fields": [
+            "_name",
+            "_url"
+          ]
+        }
+      ],
+      "blockContainers": [
+        {
+          "id": "Main",
+          "name": {
+            "sv": "Main",
+            "en": "Main"
+          },
+          "combination": "IncludeSelected",
+          "allowedBlocks": [
+            "Banner"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MyAccountOrder",
+      "name": {
+        "sv": "Mitt konto - order",
+        "en": "My account - order"
+      },
+      "type": "Page",
+      "fields": [
+        "_name",
+        "_url"
+      ],
+      "fieldGroups": [
+        {
+          "id": "Settings",
+          "name": {
+            "sv": "Inställningar",
+            "en": "Settings"
+          },
+          "fields": [
+            "_name",
+            "_url"
+          ]
+        }
+      ],
+      "blockContainers": []
+    },
+    {
+      "id": "MyAccountOrderHistory",
+      "name": {
+        "sv": "Mitt konto - orderhistorik",
+        "en": "My account - order history"
+      },
+      "type": "Page",
+      "fields": [
+        "_name",
+        "_url"
+      ],
+      "fieldGroups": [
+        {
+          "id": "Settings",
+          "name": {
+            "sv": "Inställningar",
+            "en": "Settings"
+          },
+          "fields": [
+            "_name",
+            "_url"
+          ]
+        }
+      ],
+      "blockContainers": [
+        {
+          "id": "Main",
+          "name": {
+            "sv": "Main",
+            "en": "Main"
+          },
+          "combination": "IncludeSelected",
+          "allowedBlocks": [
+            "Banner"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "OrderConfirmation",
+      "name": {
+        "sv": "Orderbekräftelse",
+        "en": "Order confirmation"
+      },
+      "type": "Page",
+      "fields": [
+        "_name",
+        "_url"
+      ],
+      "fieldGroups": [
+        {
+          "id": "General",
+          "name": {
+            "sv": "Allmänt",
+            "en": "General"
+          },
+          "fields": [
+            "_name",
+            "_url"
+          ]
+        }
+      ],
+      "blockContainers": []
+    },
+    {
+      "id": "ProductList",
+      "name": {
+        "sv": "Produktlista",
+        "en": "Product list"
+      },
+      "type": "Page",
+      "fields": [
+        "_name",
+        "_url",
+        "ProductList"
+      ],
+      "fieldGroups": [
+        {
+          "id": "Settings",
+          "name": {
+            "sv": "Inställningar",
+            "en": "Settings"
+          },
+          "fields": [
+            "_name",
+            "_url",
+            "ProductList"
+          ]
+        }
+      ],
+      "blockContainers": [
+        {
+          "id": "Main",
+          "name": {
+            "sv": "Main",
+            "en": "Main"
+          },
+          "combination": "IncludeSelected",
+          "allowedBlocks": [
+            "Banner",
+            "Products"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SearchResult",
+      "name": {
+        "sv": "Sökresultat",
+        "en": "Search result"
+      },
+      "type": "Page",
+      "fields": [
+        "_name",
+        "_url"
+      ],
+      "fieldGroups": [
+        {
+          "id": "General",
+          "name": {
+            "sv": "Allmänt",
+            "en": "General"
+          },
+          "fields": [
+            "_name",
+            "_url"
+          ]
+        }
+      ],
+      "blockContainers": []
+    },
+    {
+      "id": "SiteSelector",
+      "name": {
+        "sv": "Site selector",
+        "en": "Site selector"
+      },
+      "type": "Page",
+      "fields": [
+        "_name",
+        "_url"
+      ],
+      "fieldGroups": [
+        {
+          "id": "Settings",
+          "name": {
+            "sv": "Inställningar",
+            "en": "Settings"
+          },
+          "fields": [
+            "_name",
+            "_url"
+          ]
+        }
+      ],
+      "blockContainers": [
+        {
+          "id": "Main",
+          "name": {
+            "sv": "Main",
+            "en": "Main"
+          },
+          "combination": "IncludeSelected",
+          "allowedBlocks": [
+            "Banner"
+          ]
+        }
+      ]
+    }
+  ],
+  "productTemplates": [
+    {
+      "id": "Category",
+      "name": {
+        "sv": "Kategori",
+        "en": "Category"
+      },
+      "type": "Category",
+      "useVariantUrl": false,
+      "productFieldGroups": [
+        {
+          "id": "General",
+          "name": {
+            "sv": "General",
+            "en": "General"
+          },
+          "fields": []
+        }
+      ],
+      "variantFieldGroups": [
+        {
+          "id": "General",
+          "name": {
+            "sv": "General",
+            "en": "General"
+          },
+          "fields": []
+        }
+      ],
+      "fieldGroups": [
+        {
+          "id": "General",
+          "name": {
+            "sv": "Allmänt",
+            "en": "General"
+          },
+          "fields": [
+            "_name",
+            "_description",
+            "_url",
+            "_seoTitle",
+            "_seoDescription"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ProductWithVariants",
+      "name": {
+        "sv": "Produkt med varianter",
+        "en": "Product with variants"
+      },
+      "type": "Product",
+      "useVariantUrl": true,
+      "productFieldGroups": [
+        {
+          "id": "General",
+          "name": {
+            "sv": "General",
+            "en": "General"
+          },
+          "fields": [
+            "_name",
+            "_description",
+            "Brand",
+            "Type"
+          ]
+        },
+        {
+          "id": "Product information",
+          "name": {
+            "sv": "Produktinformation",
+            "en": "Product information"
+          },
+          "fields": [
+            "ProductSheet"
+          ]
+        },
+        {
+          "id": "Product specification",
+          "name": {
+            "sv": "Produktspecifikation",
+            "en": "Product specification"
+          },
+          "fields": [
+            "Specification"
+          ]
+        }
+      ],
+      "variantFieldGroups": [
+        {
+          "id": "General",
+          "name": {
+            "sv": "General",
+            "en": "General"
+          },
+          "fields": [
+            "_name",
+            "_description",
+            "_url",
+            "_seoTitle",
+            "_seoDescription",
+            "Brand"
+          ]
+        },
+        {
+          "id": "Product information",
+          "name": {
+            "sv": "Produktinformation",
+            "en": "Product information"
+          },
+          "fields": [
+            "Color",
+            "Size"
+          ]
+        }
+      ],
+      "fieldGroups": [
+        {
+          "id": "General",
+          "name": {
+            "sv": "General",
+            "en": "General"
+          },
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "ProductWithVariantsFurniture",
+      "name": {
+        "sv": "Produkt med varianter möbler",
+        "en": "Product with variants furniture"
+      },
+      "type": "Product",
+      "useVariantUrl": true,
+      "productFieldGroups": [
+        {
+          "id": "General",
+          "name": {
+            "sv": "Allmänt",
+            "en": "General"
+          },
+          "fields": [
+            "_name",
+            "_description",
+            "ProductLine"
+          ]
+        },
+        {
+          "id": "Documents",
+          "name": {
+            "sv": "Dokument",
+            "en": "Documents"
+          },
+          "fields": [
+            "AssemblingInstruction",
+            "Measurement",
+            "SpareParts",
+            "ProductSheet"
+          ]
+        },
+        {
+          "id": "CareAdvice",
+          "name": {
+            "sv": "Skötselråd",
+            "en": "Care advice"
+          },
+          "fields": [
+            "CareAdvice"
+          ]
+        }
+      ],
+      "variantFieldGroups": [
+        {
+          "id": "General",
+          "name": {
+            "sv": "Allmänt",
+            "en": "General"
+          },
+          "fields": [
+            "_name",
+            "_url",
+            "_seoTitle",
+            "_seoDescription"
+          ]
+        },
+        {
+          "id": "ItemNumber",
+          "name": {
+            "sv": "Artikelkoder",
+            "en": "Item number"
+          },
+          "fields": [
+            "NOBB",
+            "RSK",
+            "EAN",
+            "StockedArticle"
+          ]
+        },
+        {
+          "id": "DimensionsAndWeight",
+          "name": {
+            "sv": "Dimensioner och vikt",
+            "en": "Dimensions and weight"
+          },
+          "fields": [
+            "Width",
+            "Depth",
+            "Height",
+            "Weight",
+            "HoleSpacingHandle"
+          ]
+        },
+        {
+          "id": "MaterialAndSurface",
+          "name": {
+            "sv": "Material och ytbehandling",
+            "en": "Material and surface"
+          },
+          "fields": [
+            "FrontMaterial",
+            "BodyMaterial",
+            "SurfaceTreatment",
+            "SurfaceFinish",
+            "Color",
+            "MainMaterial"
+          ]
+        },
+        {
+          "id": "StandardsAndClassifications",
+          "name": {
+            "sv": "Standard och klassificeringar",
+            "en": "Standards and classifications"
+          },
+          "fields": [
+            "SakerVatten",
+            "ETIM",
+            "SuspensionType",
+            "OpeningFunction"
+          ]
+        },
+        {
+          "id": "Packaging",
+          "name": {
+            "sv": "Paket",
+            "en": "Packaging"
+          },
+          "fields": [
+            "PackageHeight",
+            "PackageWidth",
+            "PackageDepth",
+            "PackageWeight"
+          ]
+        }
+      ],
+      "fieldGroups": [
+        {
+          "id": "General",
+          "name": {
+            "sv": "General",
+            "en": "General"
+          },
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "ProductWithVariantsList",
+      "name": {
+        "sv": "Produkt med varianter som visas i en lista",
+        "en": "Product with variants shown in a list"
+      },
+      "type": "Product",
+      "useVariantUrl": false,
+      "productFieldGroups": [
+        {
+          "id": "General",
+          "name": {
+            "sv": "General",
+            "en": "General"
+          },
+          "fields": [
+            "_name",
+            "_description",
+            "Brand",
+            "Type",
+            "_url",
+            "_seoTitle",
+            "_seoDescription"
+          ]
+        },
+        {
+          "id": "Product specification",
+          "name": {
+            "sv": "Produktspecifikation",
+            "en": "Product specification"
+          },
+          "fields": [
+            "Specification",
+            "ProductSheet"
+          ]
+        }
+      ],
+      "variantFieldGroups": [
+        {
+          "id": "General",
+          "name": {
+            "sv": "General",
+            "en": "General"
+          },
+          "fields": [
+            "_name",
+            "Color",
+            "Size"
+          ]
+        }
+      ],
+      "fieldGroups": [
+        {
+          "id": "General",
+          "name": {
+            "sv": "General",
+            "en": "General"
+          },
+          "fields": []
+        }
+      ]
+    }
+  ]
+}

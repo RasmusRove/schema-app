@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
-import type { PageTemplate, BlockContainer, BlockCombination } from '@/types/schema';
-import { BLOCK_COMBINATIONS } from '@/types/schema';
+import type { PageTemplate, BlockContainer, BlockCombination, WebsiteTemplateType } from '@/types/schema';
+import { BLOCK_COMBINATIONS, WEBSITE_TEMPLATE_TYPES } from '@/types/schema';
 import { useSchemaStore } from '@/store/schemaStore';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -40,6 +40,10 @@ export function PageTemplatesTab() {
           </Button>
         )}
       </div>
+      <p className="text-sm text-muted-foreground">
+        Type <span className="font-medium text-foreground">Page</span> or{' '}
+        <span className="font-medium text-foreground">Website</span>.
+      </p>
 
       {creating && (
         <PageTemplateEditor
@@ -68,9 +72,10 @@ export function PageTemplatesTab() {
           />
         ) : (
           <div key={t.id} className="flex items-center justify-between rounded-lg border border-border bg-card p-3">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 flex-wrap">
               <code className="text-xs bg-secondary px-2 py-0.5 rounded font-mono text-primary">{t.id}</code>
               <span className="text-sm">{t.name.en}</span>
+              <span className="text-xs bg-muted px-2 py-0.5 rounded">{t.type ?? 'Page'}</span>
               <span className="text-xs text-muted-foreground">{t.fields.length} fields</span>
               {t.blockContainers.length > 0 && (
                 <span className="text-xs text-accent flex items-center gap-1"><Box className="w-3 h-3" />{t.blockContainers.length} containers</span>
@@ -105,6 +110,7 @@ function PageTemplateEditor({
   const [id, setId] = useState(template?.id ?? '');
   const [nameSv, setNameSv] = useState(template?.name.sv ?? '');
   const [nameEn, setNameEn] = useState(template?.name.en ?? '');
+  const [type, setType] = useState<WebsiteTemplateType>(template?.type ?? 'Page');
   const [selectedFields, setSelectedFields] = useState<string[]>(template?.fields ?? []);
   const [blockContainers, setBlockContainers] = useState<BlockContainer[]>(template?.blockContainers ?? []);
   const [errors, setErrors] = useState<string[]>([]);
@@ -113,20 +119,21 @@ function PageTemplateEditor({
     const errs: string[] = [];
     const trimmedId = id.trim();
     if (!trimmedId) errs.push('ID is required');
-    else if (!/^[A-Z_][A-Za-z0-9_]*$/.test(trimmedId))
-      errs.push('ID must start with uppercase letter or underscore, then letters/numbers/underscores only');
+    else if (!/^[A-Za-z_][A-Za-z0-9_]*$/.test(trimmedId))
+      errs.push('ID must start with a letter or underscore, then letters/numbers/underscores only');
     if (!template && existingIds.includes(trimmedId)) errs.push('ID already exists');
     if (!nameEn.trim()) errs.push('English name is required');
     for (const bc of blockContainers) {
       const bcId = bc.id.trim();
       if (!bcId) errs.push('Block container ID is required');
-      else if (!/^[A-Z_][A-Za-z0-9_]*$/.test(bcId))
-        errs.push(`Block container ID "${bcId}" must start with uppercase letter or underscore`);
+      else if (!/^[A-Za-z_][A-Za-z0-9_]*$/.test(bcId))
+        errs.push(`Block container ID "${bcId}" must start with a letter or underscore`);
     }
     if (errs.length) { setErrors(errs); return; }
     onSave({
       id: trimmedId,
       name: { sv: nameSv.trim(), en: nameEn.trim() },
+      type,
       fields: selectedFields,
       blockContainers: blockContainers.map((bc) => ({
         ...bc,
@@ -162,15 +169,27 @@ function PageTemplateEditor({
           {errors.map((e, i) => <p key={i}>{e}</p>)}
         </div>
       )}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div>
+          <Label>Type</Label>
+          <select
+            value={type}
+            onChange={(e) => setType(e.target.value as WebsiteTemplateType)}
+            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+            disabled={!!template}
+          >
+            {WEBSITE_TEMPLATE_TYPES.map((t) => (
+              <option key={t} value={t}>{t}</option>
+            ))}
+          </select>
+        </div>
         <div><Label>ID</Label><Input value={id} onChange={(e) => setId(e.target.value)} className="font-mono text-sm" disabled={!!template} /></div>
         <div><Label>Name (SV)</Label><Input value={nameSv} onChange={(e) => setNameSv(e.target.value)} /></div>
         <div><Label>Name (EN)</Label><Input value={nameEn} onChange={(e) => setNameEn(e.target.value)} /></div>
       </div>
 
-      {/* Page Fields */}
       <div>
-        <Label className="text-sm font-semibold">Page Fields</Label>
+        <Label className="text-sm font-semibold">Fields</Label>
         {pageFields.length === 0 ? (
           <p className="text-sm text-muted-foreground mt-1">Create page fields first.</p>
         ) : (
@@ -187,7 +206,6 @@ function PageTemplateEditor({
         )}
       </div>
 
-      {/* Block Containers */}
       <div className="space-y-3">
         <div className="flex items-center justify-between">
           <Label className="text-sm font-semibold">Block Containers</Label>

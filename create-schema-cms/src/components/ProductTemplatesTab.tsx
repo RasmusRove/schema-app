@@ -130,8 +130,8 @@ function ProductTemplateEditor({
     const errs: string[] = [];
     const trimmedId = id.trim();
     if (!trimmedId) errs.push('ID is required');
-    else if (!/^[A-Z_][A-Za-z0-9_]*$/.test(trimmedId))
-      errs.push('ID must start with uppercase letter or underscore, then letters/numbers/underscores only');
+    else if (!/^[A-Za-z_][A-Za-z0-9_]*$/.test(trimmedId))
+      errs.push('ID must start with a letter or underscore, then letters/numbers/underscores only');
     if (!template && existingIds.includes(trimmedId)) errs.push('ID already exists');
     if (!nameSv.trim()) errs.push('Swedish name is required');
     if (!nameEn.trim()) errs.push('English name is required');
@@ -142,8 +142,8 @@ function ProductTemplateEditor({
       const seen = new Set<string>();
       for (const g of groups) {
         if (!g.id) errs.push(`${kind}: group ID is required`);
-        else if (!/^[A-Z_][A-Za-z0-9_]*$/.test(g.id))
-          errs.push(`${kind}: group ID "${g.id}" must start with uppercase letter or underscore`);
+        else if (!/^[A-Za-z_][A-Za-z0-9_ ]*$/.test(g.id))
+          errs.push(`${kind}: group ID "${g.id}" must start with a letter or underscore`);
         if (seen.has(g.id)) errs.push(`${kind}: duplicate group "${g.id}"`);
         seen.add(g.id);
         if (!g.name?.sv?.trim() || !g.name?.en?.trim())

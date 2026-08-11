@@ -107,6 +107,9 @@ export function FieldsTab({ scope }: FieldsTabProps) {
                 <code className="text-xs bg-secondary px-2 py-0.5 rounded font-mono text-primary">{f.id}</code>
                 <span className="text-sm">{f.name.en}</span>
                 <span className="text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded">{f.type}</span>
+                {f.systemDefined && (
+                  <span className="text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded">System</span>
+                )}
                 {f.multiLanguage && (
                   <span className="text-xs text-accent bg-accent/10 px-2 py-0.5 rounded">Multi-lang</span>
                 )}
@@ -118,15 +121,19 @@ export function FieldsTab({ scope }: FieldsTabProps) {
                 )}
               </div>
               <div className="flex gap-1">
-                <Button variant="ghost" size="icon" onClick={() => handleDuplicate(f)} title="Duplicate">
-                  <Copy className="w-3.5 h-3.5" />
-                </Button>
+                {!f.systemDefined && (
+                  <Button variant="ghost" size="icon" onClick={() => handleDuplicate(f)} title="Duplicate">
+                    <Copy className="w-3.5 h-3.5" />
+                  </Button>
+                )}
                 <Button variant="ghost" size="icon" onClick={() => setEditing(f.id)} title="Edit">
                   <Pencil className="w-3.5 h-3.5" />
                 </Button>
-                <Button variant="ghost" size="icon" onClick={() => deleteField(f.id)} className="text-destructive" title="Delete">
-                  <Trash2 className="w-3.5 h-3.5" />
-                </Button>
+                {!f.systemDefined && (
+                  <Button variant="ghost" size="icon" onClick={() => deleteField(f.id)} className="text-destructive" title="Delete">
+                    <Trash2 className="w-3.5 h-3.5" />
+                  </Button>
+                )}
               </div>
             </div>
           )
